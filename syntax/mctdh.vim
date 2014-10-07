@@ -53,7 +53,15 @@ syn keyword IntegratorKeywords contained VMF CMF ABM BS RK5 RK8 SIL CSIL DAV rDA
 syn keyword InitWFKeywords contained file build end-build gauss HO
 
 " END of Input
-syn keyword EndInput end-input
+syn keyword EndInput end-input end-operator
+
+" operator file sections
+" op_define-section
+syn keyword OpDefineKeywords contained title end-title
+
+" hamiltonian-section
+syn keyword HamiltonianKeywords contained modes KE
+
 
 " INPUT SECTIONS
 syn region runSection matchgroup=mctdhSections start="RUN-SECTION" end="end-run-section" transparent contains=InputRunKeywords,mctdhNumber,mctdhFloat,mctdhComment
@@ -61,7 +69,11 @@ syn region OpSection matchgroup=mctdhSections start="OPERATOR-SECTION" end="end-
 syn region sbasisSection matchgroup=mctdhSections start="sbasis-section" end="end-sbasis-section" transparent contains=mctdhNumber,mctdhFloat,mctdhComment,sbasisKeywords
 syn region pbasisSection matchgroup=mctdhSections start="pbasis-section" end="end-pbasis-section" transparent contains=mctdhNumber,mctdhFloat,mctdhComment,pbasisKeywords
 syn region IntegratorSection matchgroup=mctdhSections start="INTEGRATOR-SECTION" end="end-integrator-section" transparent contains=mctdhNumber,mctdhFloat,mctdhComment,IntegratorKeywords
-syn region InitWFSection matchgroup=mctdhSections start="INIT_WF-SECTION" end="end-init_wf-section" transparent contains=mctdhComment,InitWFKeywords
+syn region InitWFSection matchgroup=mctdhSections start="INIT_WF-SECTION" end="end-init_wf-section" transparent contains=mctdhNumber,mctdhFloat,mctdhComment,InitWFKeywords
+" OPERATOR SECTIONS
+syn region OpDefineSection matchgroup=mctdhSections start="OP_DEFINE-SECTION" end="end-op_define-section" transparent contains=OpdefineKeywords,mctdhComment
+syn region ParameterSection matchgroup=mctdhSections start="PARAMETER-SECTION" end="END-PARAMETER-SECTION" transparent contains=mctdhComment,mctdhNumber,mctdhFloat
+syn region HamiltonianSection matchgroup=mctdhSections start="HAMILTONIAN-SECTION" end="END-HAMILTONIAN-SECTION" transparent contains=HamiltonianKeywords,mctdhComment,mctdhNumber,mctdhFloat
 
 " Highlights
 hi def link mctdhComment        Comment
@@ -75,6 +87,8 @@ hi def link sbasisKeywords      Type
 hi def link pbasisKeywords      Type
 hi def link IntegratorKeywords  Type
 hi def link InitWFKeywords      Type
+hi def link OpDefineKeywords    Type
+hi def link HamiltonianKeywords Type
 hi def link mctdhSections       Statement
 hi def link EndInput            Error
 
