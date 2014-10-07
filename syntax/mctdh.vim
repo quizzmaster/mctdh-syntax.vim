@@ -30,7 +30,7 @@ syn match mctdhFloat	display	"\<\d\+\.\([deq][-+]\=\d\+\)\=\(_\a\w*\)\=\>"
 " floating point number, E exponents
 syn match mctdhFloat	display	"\<\d\+\.\d\+\([E][-+]\=\d\+\)\=\(_\a\w*\)\=\>"
 " floating point number
-syn match mctdhFloat	display	"\<[-+]\d\+\.\d\+\(e[-+]\=\d\+\)\=\(_\a\w*\)\=\>"
+syn match mctdhFloat	display	"\<[-+]\d\+\.\d\+\([deq][-+]\=\d\+\)\=\(_\a\w*\)\=\>"
 
 " Keywords for RUN-SECTION
 syn keyword InputRunKeywords contained name stop continue tfinal tout tpsi
