@@ -34,7 +34,7 @@ syn match mctdhFloat	display	"\<[-+]\d\+\.\d\+\([deq][-+]\=\d\+\)\=\(_\a\w*\)\=\
 
 " Keywords for RUN-SECTION
 syn keyword InputRunKeywords contained name stop continue tfinal tout tpsi
-syn keyword InputRunKeywords contained psi expect expect1 gridpop steps auto
+syn keyword InputRunKeywords contained psi expect expect1 gridpop steps auto exact
 syn keyword InputRunKeywords contained propagation diagonalisation relaxation genoper gendvr geninwf
 
 " Keywords for OPERATOR-SECTION
@@ -50,7 +50,7 @@ syn keyword pbasisKeywords contained FFT HO el rHO Leg Lagu1 Lagu2 Lagu3 Lagu4 s
 syn keyword IntegratorKeywords contained VMF CMF ABM BS RK5 RK8 SIL CSIL DAV rDAV rrDAV cDAV
 
 " Keywords for INIT_WF-SECTION
-syn keyword InitWFKeywords contained file build end-build gauss HO
+syn keyword InitWFKeywords contained file build end-build gauss HO eigenf pop
 
 " END of Input
 syn keyword EndInput end-input end-operator
@@ -60,7 +60,7 @@ syn keyword EndInput end-input end-operator
 syn keyword OpDefineKeywords contained title end-title
 
 " hamiltonian-section
-syn keyword HamiltonianKeywords contained modes KE
+syn keyword HamiltonianKeywords contained modes KE usediag
 
 
 " INPUT SECTIONS
